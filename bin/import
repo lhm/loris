@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby -n
+
+BEGIN {
+  $LOAD_PATH.unshift File.join(__dir__, '..', 'lib')
+
+  require 'english'
+  require 'loris'
+
+  $importer = Loris::Importer.new
+}
+
+begin
+  attributes = JSON.parse($LAST_READ_LINE.chomp!)
+  document   = Loris::Document.new(attributes)
+  response   = $importer.import(document)
+  puts response
+end
