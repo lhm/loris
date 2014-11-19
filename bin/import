@@ -13,5 +13,6 @@ begin
   attributes = JSON.parse($LAST_READ_LINE.chomp!)
   document   = Loris::Document.new(attributes)
   response   = $importer.import(document)
-  puts response
+
+  puts JSON.dump(response) if response
 end

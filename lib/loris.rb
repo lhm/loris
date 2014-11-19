@@ -16,7 +16,7 @@ module Loris
   def self.repository
     Elasticsearch::Persistence::Repository.new do
       index 'loris'
-      client Elasticsearch::Client.new url: Loris.es_url, log: true
+      client Elasticsearch::Client.new url: Loris.es_url
     end
   end
 
