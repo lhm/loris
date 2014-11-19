@@ -1,7 +1,6 @@
 require 'loris/version'
 
 require 'json'
-require 'typhoeus/adapters/faraday'
 require 'elasticsearch'
 require 'elasticsearch/persistence'
 
