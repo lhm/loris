@@ -1,28 +1,34 @@
 # Loris
 
-TODO: Write a gem description
+Pipeline for importing, searching and notifying about (RIS) documents.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+```
+git clone https://github.com/lhm/loris.git
+bundle install
+```
 
-    gem 'loris'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install loris
+Needs Elasticsearch installed.
 
 ## Usage
 
-TODO: Write usage instructions here
+bin/import consumes line based JSON on stdin and imports as is into the
+'loris' index on Elasticsearch running on localhost:9200.
+
+```
+cat path/to/json | bin/import
+```
+
+## TODO
+
+* pass primary key as argument, and don't import if doc exists
+* process ES response, and output only created document (not updated
+  ones)
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/loris/fork )
+1. Fork it ( https://github.com/lhm/loris/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
